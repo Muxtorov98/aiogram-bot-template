@@ -1,1 +1,2 @@
-# aiogram-bot-template
+<?php
+echo "hello word";
