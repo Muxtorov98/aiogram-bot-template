@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  commonmoder:
+    container_name: commonmoder
+    build:
+      context: .
+    stop_signal: SIGINT
+    image: commonmoder
+    command: python app.py
+    restart: unless-stopped
+    ports:
+      - "${WEBAPP_PORT}:${WEBAPP_PORT}"
+    volumes:
+    - .:/src
+    env_file:
+      - ".env"
